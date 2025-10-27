@@ -161,6 +161,10 @@ const local: App.I18n.Schema = {
     }
   },
   route: {
+    student: '学生端', // 新增
+    student_dashboard: '个性化学习中心',
+    'student_ai-tutor': 'AI助教互动',
+    'student_learning-progress': '学习进度追踪',
     login: '登录',
     403: '无权限',
     404: '页面不存在',

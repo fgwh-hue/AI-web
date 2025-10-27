@@ -96,6 +96,10 @@ declare module "@elegant-router/types" {
     "pro-naive_table": "/pro-naive/table";
     "pro-naive_table_remote": "/pro-naive/table/remote";
     "pro-naive_table_row-edit": "/pro-naive/table/row-edit";
+    "student": "/student";
+    "student_ai-tutor": "/student/ai-tutor";
+    "student_dashboard": "/student/dashboard";
+    "student_learning-progress": "/student/learning-progress";
     "user-center": "/user-center";
   };
 
@@ -156,6 +160,7 @@ declare module "@elegant-router/types" {
     | "multi-menu"
     | "plugin"
     | "pro-naive"
+    | "student"
     | "user-center"
   >;
 
@@ -223,6 +228,9 @@ declare module "@elegant-router/types" {
     | "pro-naive_form_step"
     | "pro-naive_table_remote"
     | "pro-naive_table_row-edit"
+    | "student_ai-tutor"
+    | "student_dashboard"
+    | "student_learning-progress"
     | "user-center"
   >;
 

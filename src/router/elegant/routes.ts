@@ -703,6 +703,44 @@ export const generatedRoutes: GeneratedRoute[] = [
     ]
   },
   {
+    name: 'student',
+    path: '/student',
+    component: 'layout.base',
+    meta: {
+      title: 'student',
+      i18nKey: 'route.student'
+    },
+    children: [
+      {
+        name: 'student_ai-tutor',
+        path: '/student/ai-tutor',
+        component: 'view.student_ai-tutor',
+        meta: {
+          title: 'student_ai-tutor',
+          i18nKey: 'route.student_ai-tutor'
+        }
+      },
+      {
+        name: 'student_dashboard',
+        path: '/student/dashboard',
+        component: 'view.student_dashboard',
+        meta: {
+          title: 'student_dashboard',
+          i18nKey: 'route.student_dashboard'
+        }
+      },
+      {
+        name: 'student_learning-progress',
+        path: '/student/learning-progress',
+        component: 'view.student_learning-progress',
+        meta: {
+          title: 'student_learning-progress',
+          i18nKey: 'route.student_learning-progress'
+        }
+      }
+    ]
+  },
+  {
     name: 'user-center',
     path: '/user-center',
     component: 'layout.base$view.user-center',

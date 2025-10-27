@@ -161,6 +161,10 @@ const local: App.I18n.Schema = {
     }
   },
   route: {
+    student_dashboard: 'Personalized Learning Center',
+    'student_ai-tutor': 'AI Tutor Interaction',
+    'student_learning-progress': 'Learning Progress Tracking',
+    student: 'Student',
     login: 'Login',
     403: 'No Permission',
     404: 'Page Not Found',
