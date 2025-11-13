@@ -708,7 +708,8 @@ export const generatedRoutes: GeneratedRoute[] = [
     component: 'layout.base',
     meta: {
       title: 'student',
-      i18nKey: 'route.student'
+      i18nKey: 'route.student',
+      localIcon: 'home'
     },
     children: [
       {
@@ -717,7 +718,8 @@ export const generatedRoutes: GeneratedRoute[] = [
         component: 'view.student_ai-tutor',
         meta: {
           title: 'student_ai-tutor',
-          i18nKey: 'route.student_ai-tutor'
+          i18nKey: 'route.student_ai-tutor',
+          localIcon: 'robot'
         }
       },
       {
@@ -726,7 +728,8 @@ export const generatedRoutes: GeneratedRoute[] = [
         component: 'view.student_dashboard',
         meta: {
           title: 'student_dashboard',
-          i18nKey: 'route.student_dashboard'
+          i18nKey: 'route.student_dashboard',
+          localIcon: 'home'
         }
       },
       {
@@ -735,7 +738,8 @@ export const generatedRoutes: GeneratedRoute[] = [
         component: 'view.student_learning-progress',
         meta: {
           title: 'student_learning-progress',
-          i18nKey: 'route.student_learning-progress'
+          i18nKey: 'route.student_learning-progress',
+          localIcon: 'chart-timeline-variant'
         }
       }
     ]

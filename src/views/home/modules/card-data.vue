@@ -33,8 +33,8 @@ const cardData = computed<CardData[]>(() => [
   },
   {
     key: 'turnover',
-    title: $t('page.home.turnover'),
-    value: 1026,
+    title: $t('page.home.totalHours'),
+    value: 9000,
     unit: '$',
     color: {
       start: '#865ec0',
@@ -55,8 +55,8 @@ const cardData = computed<CardData[]>(() => [
   },
   {
     key: 'dealCount',
-    title: $t('page.home.dealCount'),
-    value: 9527,
+    title: $t('page.home.passRate'),
+    value: 100,
     unit: '',
     color: {
       start: '#fcbc25',

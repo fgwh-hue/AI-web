@@ -173,8 +173,6 @@ const local: App.I18n.Schema = {
     home: '首页',
     document: '文档',
     document_project: '项目文档',
-    'document_project-link': '项目文档(外链)',
-    document_video: '视频教程',
     document_vue: 'Vue文档',
     document_vite: 'Vite文档',
     document_unocss: 'UnoCSS文档',
@@ -182,6 +180,8 @@ const local: App.I18n.Schema = {
     'document_pro-naive': 'Pro Naive UI文档',
     document_antd: 'Ant Design Vue文档',
     document_alova: 'Alova文档',
+    'document_project-link': '项目链接',
+    document_video: '视频教程',
     'user-center': '个人中心',
     about: '关于',
     function: '系统功能',
@@ -260,7 +260,7 @@ const local: App.I18n.Schema = {
         back: '返回',
         validateSuccess: '验证成功',
         loginSuccess: '登录成功',
-        welcomeBack: '欢迎回来，{userName} ！'
+        welcomeBack: '欢迎回来，{userName} !'
       },
       pwdLogin: {
         title: '密码登录',
@@ -307,8 +307,6 @@ const local: App.I18n.Schema = {
       devDep: '开发依赖'
     },
     home: {
-      branchDesc:
-        '为了方便大家开发和更新合并，我们对main分支的代码进行了精简，只保留了首页菜单，其余内容已移至example分支进行维护。预览地址显示的内容即为example分支的内容。',
       greeting: '早安，{userName}, 今天又是充满活力的一天!',
       weatherDesc: '今日多云转晴，20℃ - 25℃!',
       projectCount: '项目数',
@@ -317,21 +315,25 @@ const local: App.I18n.Schema = {
       downloadCount: '下载量',
       registerCount: '注册量',
       schedule: '作息安排',
-      study: '学习',
-      work: '工作',
+      study: '运动',
+      work: '学习',
       rest: '休息',
       entertainment: '娱乐',
       visitCount: '访问量',
       turnover: '成交额',
       dealCount: '成交量',
+      courseCount: '课程数',
+      totalHours: '奖学金',
+      attendanceRate: '到课率',
+      passRate: '合格率',
       projectNews: {
-        title: '项目动态',
-        moreNews: '更多动态',
-        desc1: 'Soybean 在2021年5月28日创建了开源项目 soybean-admin!',
-        desc2: 'Yanbowe 向 soybean-admin 提交了一个bug，多标签栏不会自适应。',
-        desc3: 'Soybean 准备为 soybean-admin 的发布做充分的准备工作!',
-        desc4: 'Soybean 正在忙于为soybean-admin写项目说明文档！',
-        desc5: 'Soybean 刚才把工作台页面随便写了一些，凑合能看了！'
+        title: '学习内容',
+        moreNews: '更多学习内容',
+        desc1: 'fgwh第一次学习github了解它是一个版本控制工具拥有大量质料和开源软件',
+        desc2: 'fgwh第一次学习vue了解它是一个渐进式JavaScript框架',
+        desc3: 'fgwh第一次学习TS了解它是一个强类型的JavaScript超集',
+        desc4: 'fgwh第一次学习git了解它是一个版本控制工具可以管理项目的代码变更',
+        desc5: '一直在研究ESC服务器与gemini CLI希望能在未来的项目中使用它'
       },
       creativity: '创意'
     },
