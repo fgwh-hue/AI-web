@@ -179,6 +179,8 @@ const local: App.I18n.Schema = {
     home: 'Home',
     'demo-route': 'Demo Route',
     'demo-route_child': 'Demo Route Child',
+    'home-student': 'Student Home',
+    'home-teacher': 'Teacher Home',
     student_tools: 'Learning Web Pages',
     document: 'Document',
     document_project: 'Project Document',

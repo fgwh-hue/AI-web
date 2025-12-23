@@ -179,6 +179,8 @@ const local: App.I18n.Schema = {
     home: '首页',
     'demo-route': '演示路由',
     'demo-route_child': '演示子路由',
+    'home-student': '学生首页',
+    'home-teacher': '教师首页',
     student_tools: '学习网页',
     document: '文档',
     document_project: '项目文档',
