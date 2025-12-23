@@ -161,16 +161,25 @@ const local: App.I18n.Schema = {
     }
   },
   route: {
-    student: '学生端', // 新增
+    student: '学生中心',
     student_dashboard: '个性化学习中心',
     'student_ai-tutor': 'AI助教互动',
     'student_learning-progress': '学习进度追踪',
+    teacher: '教师中心',
+    teacher_dashboard: '教师仪表板',
+    teacher_course: '课程管理',
+    teacher_student: '学生管理',
+    teacher_assignment: '作业管理',
+    teacher_analytics: '数据分析',
     login: '登录',
     403: '无权限',
     404: '页面不存在',
     500: '服务器错误',
     'iframe-page': '外链页面',
     home: '首页',
+    'demo-route': '演示路由',
+    'demo-route_child': '演示子路由',
+    student_tools: '学习网页',
     document: '文档',
     document_project: '项目文档',
     document_vue: 'Vue文档',
@@ -295,7 +304,7 @@ const local: App.I18n.Schema = {
     },
     about: {
       title: '关于',
-      introduction: `SoybeanAdmin 是一个优雅且功能强大的后台管理模板，基于最新的前端技术栈，包括 Vue3, Vite7, TypeScript, Pinia 和 UnoCSS。它内置了丰富的主题配置和组件，代码规范严谨，实现了自动化的文件路由系统。此外，它还采用了基于 ApiFox 的在线Mock数据方案。SoybeanAdmin 为您提供了一站式的后台管理解决方案，无需额外配置，开箱即用。同样是一个快速学习前沿技术的最佳实践。`,
+      introduction: `Hello`,
       projectInfo: {
         title: '项目信息',
         version: '版本',
@@ -307,7 +316,14 @@ const local: App.I18n.Schema = {
       devDep: '开发依赖'
     },
     home: {
+      courseCount: '课程数',
+      totalHours: '总学时',
+      attendanceRate: '出勤率',
+      passRate: '及格率',
       greeting: '早安，{userName}, 今天又是充满活力的一天!',
+      greetingStudent: '同学',
+      greetingTeacher: '教师',
+      greetingAdmin: '管理员',
       weatherDesc: '今日多云转晴，20℃ - 25℃!',
       projectCount: '项目数',
       todo: '待办',
@@ -322,10 +338,6 @@ const local: App.I18n.Schema = {
       visitCount: '访问量',
       turnover: '成交额',
       dealCount: '成交量',
-      courseCount: '课程数',
-      totalHours: '奖学金',
-      attendanceRate: '到课率',
-      passRate: '合格率',
       projectNews: {
         title: '学习内容',
         moreNews: '更多学习内容',

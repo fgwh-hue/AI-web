@@ -9,7 +9,7 @@ import type { RouteKey, RoutePath } from '@elegant-router/types';
 import { useAuthStore } from '@/store/modules/auth';
 import { useRouteStore } from '@/store/modules/route';
 import { localStg } from '@/utils/storage';
-import { getRouteName } from '@/router/elegant/transform';
+import { getRouteName, getRoutePath } from '@/router/elegant/transform';
 
 /**
  * create route guard
@@ -122,13 +122,13 @@ async function initRoute(to: RouteLocationNormalized): Promise<RouteLocationRaw 
     await routeStore.initAuthRoute();
 
     // the route is captured by the "not-found" route because the auth route is not initialized
-    // after the auth route is initialized, redirect to the original route
+    // after the auth route is initialized, redirect to the user's home page
     if (isNotFoundRoute) {
-      const rootRoute: RouteKey = 'root';
-      const path = to.redirectedFrom?.name === rootRoute ? '/' : to.fullPath;
+      // 直接跳转到用户对应的首页路径
+      const homePath = getRoutePath(routeStore.routeHome as RouteKey);
 
       const location: RouteLocationRaw = {
-        path,
+        path: homePath || '/home',
         replace: true,
         query: to.query,
         hash: to.hash

@@ -13,7 +13,6 @@ import { clearAuthStorage, getToken } from './shared';
 
 export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
   const route = useRoute();
-  const authStore = useAuthStore();
   const routeStore = useRouteStore();
   const tabStore = useTabStore();
   const { toLogin, redirectFromLogin } = useRouterPush(false);
@@ -44,7 +43,14 @@ export const useAuthStore = defineStore(SetupStoreId.Auth, () => {
 
     clearAuthStorage();
 
-    authStore.$reset();
+    // 手动重置状态
+    token.value = '';
+    Object.assign(userInfo, {
+      userId: '',
+      userName: '',
+      roles: [],
+      buttons: []
+    });
 
     if (!route.meta.constant) {
       await toLogin();

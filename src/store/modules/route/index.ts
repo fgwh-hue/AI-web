@@ -202,7 +202,13 @@ export const useRouteStore = defineStore(SetupStoreId.Route, () => {
       addAuthRoutes(filteredAuthRoutes);
     }
 
+    // 所有角色都使用 'home' 作为首页，由 home/index.vue 动态渲染对应角色的页面
+    const home: LastLevelRouteKey = 'home';
+    setRouteHome(home);
+
     handleConstantAndAuthRoutes();
+
+    handleUpdateRootRouteRedirect(home);
 
     setIsInitAuthRoute(true);
   }

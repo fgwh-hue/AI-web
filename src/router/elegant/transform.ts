@@ -186,6 +186,8 @@ const routeMap: RouteMap = {
   "alova_request": "/alova/request",
   "alova_scenes": "/alova/scenes",
   "alova_user": "/alova/user",
+  "demo-route": "/demo-route",
+  "demo-route_child": "/demo-route/child",
   "function": "/function",
   "function_hide-child": "/function/hide-child",
   "function_hide-child_one": "/function/hide-child/one",
@@ -246,6 +248,13 @@ const routeMap: RouteMap = {
   "student_ai-tutor": "/student/ai-tutor",
   "student_dashboard": "/student/dashboard",
   "student_learning-progress": "/student/learning-progress",
+  "student_tools": "/student/tools",
+  "teacher": "/teacher",
+  "teacher_analytics": "/teacher/analytics",
+  "teacher_assignment": "/teacher/assignment",
+  "teacher_course": "/teacher/course",
+  "teacher_dashboard": "/teacher/dashboard",
+  "teacher_student": "/teacher/student",
   "user-center": "/user-center"
 };
 

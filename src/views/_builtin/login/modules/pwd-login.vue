@@ -20,12 +20,11 @@ interface FormModel {
 }
 
 const model: FormModel = reactive({
-  userName: 'Soybean',
+  userName: 'student',
   password: '123456'
 });
 
 const rules = computed<Record<keyof FormModel, App.Global.FormRule[]>>(() => {
-  // inside computed to make locale reactive, if not apply i18n, you can define it without computed
   const { formRules } = useFormRules();
 
   return {
@@ -52,19 +51,19 @@ const accounts = computed<Account[]>(() => [
   {
     key: 'super',
     label: $t('page.login.pwdLogin.superAdmin'),
-    userName: 'Super',
+    userName: 'student',
     password: '123456'
   },
   {
     key: 'admin',
     label: $t('page.login.pwdLogin.admin'),
-    userName: 'Admin',
+    userName: 'teacher',
     password: '123456'
   },
   {
     key: 'user',
     label: $t('page.login.pwdLogin.user'),
-    userName: 'User',
+    userName: 'Admin',
     password: '123456'
   }
 ]);

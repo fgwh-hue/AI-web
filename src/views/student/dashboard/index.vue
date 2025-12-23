@@ -76,7 +76,12 @@ const todoList = ref<TodoItem[]>([
 const recommendations = ref<RecommendationItem[]>([
   { id: 'rec1', title: '黑马程序员快速入门', type: '视频', tagType: 'info' },
   { id: 'rec2', title: '文章：如何高效记笔记', type: '文章', tagType: 'success' },
-  { id: 'rec3', title: '练习题：高数第一章单元测验', type: '练习', tagType: 'warning' }
+  { id: 'rec3', title: '练习题：高数第一章单元测验', type: '练习', tagType: 'warning' },
+  { id: 'rec4', title: '免费课程：Python数据分析实战', type: '视频', tagType: 'info' },
+  { id: 'rec5', title: '技巧：使用思维导图整理知识点', type: '文章', tagType: 'success' },
+  { id: 'rec6', title: '模拟题：大学英语四级真题训练', type: '练习', tagType: 'warning' },
+  { id: 'rec7', title: '视频：机器学习基础概念讲解', type: '视频', tagType: 'info' },
+  { id: 'rec8', title: '干货：程序员面试常见问题解析', type: '文章', tagType: 'success' }
 ]);
 
 // 模拟的“进阶阶段”数据
@@ -272,14 +277,16 @@ onMounted(() => {
             <template #header-extra>
               <a href="#" class="text-sm text-primary">换一批</a>
             </template>
-            <NList hoverable clickable>
-              <NListItem v-for="rec in recommendations" :key="rec.id" class="interactive-item !px-0">
-                <div class="flex items-center">
-                  <span class="flex-1 ellipsis-text pr-2">{{ rec.title }}</span>
-                  <NTag :type="rec.tagType" size="small">{{ rec.type }}</NTag>
-                </div>
-              </NListItem>
-            </NList>
+            <div class="recommendations-container">
+              <NList hoverable clickable :show-divider="true">
+                <NListItem v-for="rec in recommendations" :key="rec.id" class="interactive-item recommendation-item">
+                  <div class="w-full flex items-center justify-between">
+                    <span class="flex-1 ellipsis-text">{{ rec.title }}</span>
+                    <NTag :type="rec.tagType" size="small" :bordered="false" :round="true">{{ rec.type }}</NTag>
+                  </div>
+                </NListItem>
+              </NList>
+            </div>
           </NCard>
         </NGi>
 
@@ -352,5 +359,53 @@ onMounted(() => {
     width 0.6s ease-out,
     height 0.6s ease-out,
     opacity 0.6s ease-out;
+}
+
+/* 学习推荐区域样式 */
+.recommendations-container {
+  max-height: 280px; /* 控制容器最大高度，确保不撑大卡片 */
+  overflow-y: auto; /* 添加垂直滚动条 */
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 108, 255, 0.5) transparent;
+}
+
+/* 滚动条样式 */
+.recommendations-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.recommendations-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.recommendations-container::-webkit-scrollbar-thumb {
+  background: rgba(100, 108, 255, 0.5);
+  border-radius: 3px;
+}
+
+.recommendations-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 108, 255, 0.7);
+}
+
+/* 学习推荐列表项样式 */
+.recommendation-item {
+  padding: 12px 0 !important;
+  min-height: auto;
+  border-radius: 8px;
+  margin: 4px 0;
+  transition: all 0.2s ease;
+}
+
+.recommendation-item:hover {
+  background-color: rgba(100, 108, 255, 0.05);
+  transform: translateX(4px);
+}
+
+/* 省略文本样式 */
+.ellipsis-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 </style>

@@ -1,16 +1,12 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useAppStore } from '@/store/modules/app';
-import { useAuthStore } from '@/store/modules/auth';
-import { $t } from '@/locales';
 
 defineOptions({
-  name: 'HeaderBanner'
+  name: 'TeacherHeaderBanner'
 });
 
 const appStore = useAppStore();
-const authStore = useAuthStore();
-
 const gap = computed(() => (appStore.isMobile ? 0 : 16));
 
 interface StatisticData {
@@ -20,36 +16,10 @@ interface StatisticData {
 }
 
 const statisticData = computed<StatisticData[]>(() => [
-  {
-    id: 0,
-    label: $t('page.home.projectCount'),
-    value: '25'
-  },
-  {
-    id: 1,
-    label: $t('page.home.todo'),
-    value: '4/16'
-  },
-  {
-    id: 2,
-    label: $t('page.home.message'),
-    value: '12'
-  }
+  { id: 0, label: '授课班级', value: '6' },
+  { id: 1, label: '待批作业', value: '28' },
+  { id: 2, label: '今日课程', value: '3' }
 ]);
-
-const greetingName = computed(() => {
-  const roles = authStore.userInfo.roles;
-  if (roles.includes('R_STUDENT')) {
-    return $t('page.home.greetingStudent');
-  }
-  if (roles.includes('R_TEACHER')) {
-    return $t('page.home.greetingTeacher');
-  }
-  if (roles.includes('R_ADMIN')) {
-    return $t('page.home.greetingAdmin');
-  }
-  return authStore.userInfo.userName;
-});
 </script>
 
 <template>
@@ -61,10 +31,8 @@ const greetingName = computed(() => {
             <img src="@/assets/imgs/soybean.jpg" class="size-full" />
           </div>
           <div class="pl-12px">
-            <h3 class="text-18px font-semibold">
-              {{ $t('page.home.greeting', { userName: greetingName }) }}
-            </h3>
-            <p class="text-#999 leading-30px">{{ $t('page.home.weatherDesc') }}</p>
+            <h3 class="text-18px font-semibold">早安，老师，祝您教学顺利！</h3>
+            <p class="text-#999 leading-30px">桃李满天下，春晖遍四方</p>
           </div>
         </div>
       </NGi>

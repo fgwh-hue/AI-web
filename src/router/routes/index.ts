@@ -3,11 +3,6 @@ import { generatedRoutes } from '../elegant/routes';
 import { layouts, views } from '../elegant/imports';
 import { transformElegantRoutesToVueRoutes } from '../elegant/transform';
 
-/**
- * custom routes
- *
- * @link https://github.com/soybeanjs/elegant-router?tab=readme-ov-file#custom-route
- */
 const customRoutes: CustomRoute[] = [
   {
     name: 'exception',
@@ -60,7 +55,8 @@ const customRoutes: CustomRoute[] = [
       title: 'document',
       i18nKey: 'route.document',
       order: 2,
-      icon: 'mdi:file-document-multiple-outline'
+      icon: 'mdi:file-document-multiple-outline',
+      roles: ['R_STUDENT', 'R_TEACHER', 'R_ADMIN']
     },
     children: [
       {
@@ -124,7 +120,7 @@ const customRoutes: CustomRoute[] = [
         path: '/document/project',
         component: 'view.iframe-page',
         props: {
-          url: 'https://docs.soybeanjs.cn/zh'
+          url: 'https://www.trae.cn/'
         },
         meta: {
           title: 'document_project',

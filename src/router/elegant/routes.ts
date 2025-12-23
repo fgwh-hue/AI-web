@@ -47,7 +47,8 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'about',
       i18nKey: 'route.about',
       icon: 'fluent:book-information-24-regular',
-      order: 10
+      order: 10,
+      roles: ['R_ADMIN']
     }
   },
   {
@@ -58,7 +59,8 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'alova',
       i18nKey: 'route.alova',
       icon: 'carbon:http',
-      order: 7
+      order: 7,
+      roles: ['R_ADMIN']
     },
     children: [
       {
@@ -96,6 +98,29 @@ export const generatedRoutes: GeneratedRoute[] = [
     ]
   },
   {
+    name: 'demo-route',
+    path: '/demo-route',
+    component: 'layout.base',
+    meta: {
+      title: 'demo-route',
+      i18nKey: 'route.demo-route',
+      hideInMenu: true,
+      constant: true
+    },
+    children: [
+      {
+        name: 'demo-route_child',
+        path: '/demo-route/child',
+        component: 'view.demo-route_child',
+        meta: {
+          title: 'demo-route_child',
+          i18nKey: 'route.demo-route_child',
+          hideInMenu: true
+        }
+      }
+    ]
+  },
+  {
     name: 'function',
     path: '/function',
     component: 'layout.base',
@@ -103,7 +128,8 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'function',
       i18nKey: 'route.function',
       icon: 'icon-park-outline:all-application',
-      order: 6
+      order: 6,
+      roles: ['R_ADMIN']
     },
     children: [
       {
@@ -221,7 +247,8 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'home',
       i18nKey: 'route.home',
       icon: 'mdi:monitor-dashboard',
-      order: 1
+      order: 1,
+      roles: ['R_ADMIN', 'R_TEACHER', 'R_STUDENT']
     }
   },
   {
@@ -257,7 +284,7 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'manage',
       i18nKey: 'route.manage',
       icon: 'carbon:cloud-service-management',
-      order: 9,
+      order: 2,
       roles: ['R_ADMIN']
     },
     children: [
@@ -320,7 +347,8 @@ export const generatedRoutes: GeneratedRoute[] = [
     meta: {
       title: 'multi-menu',
       i18nKey: 'route.multi-menu',
-      order: 8
+      order: 8,
+      roles: ['R_ADMIN']
     },
     children: [
       {
@@ -383,7 +411,8 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: '插件示例',
       i18nKey: 'route.plugin',
       order: 7,
-      icon: 'clarity:plugin-line'
+      icon: 'clarity:plugin-line',
+      roles: ['R_ADMIN']
     },
     children: [
       {
@@ -630,7 +659,8 @@ export const generatedRoutes: GeneratedRoute[] = [
       title: 'pro-naive',
       i18nKey: 'route.pro-naive',
       order: 7,
-      icon: 'material-symbols-light:demography-outline-rounded'
+      icon: 'material-symbols-light:demography-outline-rounded',
+      roles: ['R_ADMIN']
     },
     children: [
       {
@@ -709,8 +739,11 @@ export const generatedRoutes: GeneratedRoute[] = [
     meta: {
       title: 'student',
       i18nKey: 'route.student',
-      localIcon: 'home'
+      icon: 'mdi:school-outline',
+      order: 1,
+      roles: ['R_STUDENT']
     },
+    redirect: '/student/dashboard',
     children: [
       {
         name: 'student_ai-tutor',
@@ -719,7 +752,8 @@ export const generatedRoutes: GeneratedRoute[] = [
         meta: {
           title: 'student_ai-tutor',
           i18nKey: 'route.student_ai-tutor',
-          localIcon: 'robot'
+          icon: 'mdi:robot',
+          order: 2
         }
       },
       {
@@ -729,7 +763,8 @@ export const generatedRoutes: GeneratedRoute[] = [
         meta: {
           title: 'student_dashboard',
           i18nKey: 'route.student_dashboard',
-          localIcon: 'home'
+          icon: 'mdi:monitor-dashboard',
+          order: 1
         }
       },
       {
@@ -739,7 +774,89 @@ export const generatedRoutes: GeneratedRoute[] = [
         meta: {
           title: 'student_learning-progress',
           i18nKey: 'route.student_learning-progress',
-          localIcon: 'chart-timeline-variant'
+          icon: 'mdi:chart-timeline-variant',
+          order: 3
+        }
+      },
+      {
+        name: 'student_tools',
+        path: '/student/tools',
+        component: 'view.student_tools',
+        meta: {
+          title: 'student_tools',
+          i18nKey: 'route.student_tools',
+          icon: 'mdi:tools',
+          order: 4
+        }
+      }
+    ]
+  },
+  {
+    name: 'teacher',
+    path: '/teacher',
+    component: 'layout.base',
+    meta: {
+      title: 'teacher',
+      i18nKey: 'route.teacher',
+      icon: 'mdi:school',
+      order: 1,
+      roles: ['R_TEACHER']
+    },
+    redirect: '/teacher/dashboard',
+    children: [
+      {
+        name: 'teacher_analytics',
+        path: '/teacher/analytics',
+        component: 'view.teacher_analytics',
+        meta: {
+          title: 'teacher_analytics',
+          i18nKey: 'route.teacher_analytics',
+          icon: 'mdi:chart-line',
+          order: 2
+        }
+      },
+      {
+        name: 'teacher_assignment',
+        path: '/teacher/assignment',
+        component: 'view.teacher_assignment',
+        meta: {
+          title: 'teacher_assignment',
+          i18nKey: 'route.teacher_assignment',
+          icon: 'mdi:file-document-edit',
+          order: 3
+        }
+      },
+      {
+        name: 'teacher_course',
+        path: '/teacher/course',
+        component: 'view.teacher_course',
+        meta: {
+          title: 'teacher_course',
+          i18nKey: 'route.teacher_course',
+          icon: 'mdi:book-open-page-variant',
+          order: 4
+        }
+      },
+      {
+        name: 'teacher_dashboard',
+        path: '/teacher/dashboard',
+        component: 'view.teacher_dashboard',
+        meta: {
+          title: 'teacher_dashboard',
+          i18nKey: 'route.teacher_dashboard',
+          icon: 'mdi:monitor-dashboard',
+          order: 1
+        }
+      },
+      {
+        name: 'teacher_student',
+        path: '/teacher/student',
+        component: 'view.teacher_student',
+        meta: {
+          title: 'teacher_student',
+          i18nKey: 'route.teacher_student',
+          icon: 'mdi:account-group',
+          order: 5
         }
       }
     ]

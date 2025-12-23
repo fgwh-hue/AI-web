@@ -484,7 +484,14 @@ declare namespace App {
           devDep: string;
         };
         home: {
+          courseCount: string;
+          totalHours: string;
+          attendanceRate: string;
+          passRate: string;
           greeting: string;
+          greetingStudent: string;
+          greetingTeacher: string;
+          greetingAdmin: string;
           weatherDesc: string;
           projectCount: string;
           todo: string;
@@ -509,10 +516,6 @@ declare namespace App {
             desc5: string;
           };
           creativity: string;
-          courseCount: string;
-          totalHours: string;
-          attendanceRate: string;
-          passRate: string;
         };
         function: {
           tab: {

@@ -5,28 +5,28 @@ import type { LastLevelRouteKey } from '@elegant-router/types';
 const userDatabase: Record<string, Api.Auth.UserInfo> = {
   student: {
     userId: '1001',
-    userName: '学生小明',
+    userName: '同学',
     roles: ['R_STUDENT'],
     buttons: []
   },
   teacher: {
     userId: '2001',
-    userName: '教师张三',
+    userName: '老师',
     roles: ['R_TEACHER'],
     buttons: []
   },
   Admin: {
     userId: '1',
-    userName: 'Admin',
+    userName: '管理员',
     roles: ['R_ADMIN'],
     buttons: ['B_CODE_ADD', 'B_CODE_EDIT']
-  },
-  Super: {
-    userId: '0',
-    userName: 'Super',
-    roles: ['R_SUPER'],
-    buttons: []
   }
+  // Super: {
+  //   userId: '0',
+  //   userName: 'Super',
+  //   roles: ['R_SUPER'],
+  //   buttons: []
+  // }
 };
 
 // 学生角色的菜单 (移除 id 属性)
@@ -112,6 +112,15 @@ const adminMenus: Api.Route.MenuRoute[] = [
 
 export default defineMock({
   '[POST]/auth/login': ({ data }) => {
+    // 验证用户是否存在
+    if (!userDatabase[data.userName]) {
+      return {
+        code: '0001',
+        msg: '用户名或密码错误',
+        data: null
+      };
+    }
+
     localStorage.setItem('mock_login_user', data.userName);
     return {
       code: '0000',
@@ -124,7 +133,15 @@ export default defineMock({
   },
 
   '[GET]/auth/getUserInfo': () => {
-    const loginUserName = localStorage.getItem('mock_login_user') || 'Super';
+    const loginUserName = localStorage.getItem('mock_login_user');
+    if (!loginUserName || !userDatabase[loginUserName]) {
+      return {
+        code: '0001',
+        msg: '用户不存在',
+        data: null
+      };
+    }
+
     const userInfo = userDatabase[loginUserName];
     return {
       code: '0000',
@@ -143,6 +160,9 @@ export default defineMock({
     if (userInfo.roles.includes('R_STUDENT')) {
       routes = studentMenus;
       home = 'student_dashboard';
+    } else if (userInfo.roles.includes('R_TEACHER')) {
+      routes = adminMenus;
+      home = 'teacher_dashboard';
     } else if (userInfo.roles.includes('R_ADMIN') || userInfo.roles.includes('R_SUPER')) {
       routes = adminMenus;
       home = 'home';
