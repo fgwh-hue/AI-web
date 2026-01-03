@@ -199,6 +199,8 @@ const routeMap: RouteMap = {
   "function_tab": "/function/tab",
   "function_toggle-auth": "/function/toggle-auth",
   "home": "/home",
+  "home-student": "/home-student",
+  "home-teacher": "/home-teacher",
   "iframe-page": "/iframe-page/:url",
   "login": "/login/:module(pwd-login|code-login|register|reset-pwd|bind-wechat)?",
   "manage": "/manage",
