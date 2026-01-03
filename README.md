@@ -1,4 +1,4 @@
-# AI学习教育系统 - 说明文档
+# AI学习教育系统 - 小白项目说明文档
 
 ## 1️⃣ 项目是做什么的
 
@@ -201,6 +201,6 @@ pnpm dev
 
 ## 最后
 
-这个AI学习教育系统是一个基于SoybeanAdmin开发的AI Web应用项目，涵盖了现代前端开发的很多方面。希望这份文档能帮助你理解这个项目，祝您学习愉快！
-项目地址：https://github.com/fgwh-hue/AI-web
+这个AI学习教育系统是一个基于SoybeanAdmin开发的功能完整的Web应用，涵盖了现代前端开发的很多方面。希望这份文档能帮助你理解这个项目，祝你学习愉快！
 
+项目地址：https://github.com/fgwh-hue/AI-web
